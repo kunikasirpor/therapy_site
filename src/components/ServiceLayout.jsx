@@ -10,7 +10,7 @@ export default function ServiceLayout({
   mainHeading,
   description,
   healingPoints,
-  ctaText, // This CTA is for the Hero section, will remain as is
+  ctaText, 
   healingFocusTags,
   faithPathHeading,
   faithPathDescription,
@@ -18,9 +18,8 @@ export default function ServiceLayout({
   mainServiceImage,
   faithPathImage,
   heroImage,
-  // PROPS FOR CUSTOM BUTTON TEXTS
-  healingCtaButtonText = "Get Started", // Default text
-  faithPathCtaButtonText = "Get Started", // Default text
+  healingCtaButtonText = "Get Started", 
+  faithPathCtaButtonText = "Get Started",
 }) {
   const testimonials = [
     {
@@ -44,37 +43,30 @@ export default function ServiceLayout({
 
   useEffect(() => {
     const interval = setInterval(() => {
-      setAnimationClass('slide-out-fade-in'); // Trigger slide out and fade in
+      setAnimationClass('slide-out-fade-in'); 
       setTimeout(() => {
         setCurrent((prev) => (prev + 1) % testimonials.length);
-        setAnimationClass('slide-in'); // Trigger slide in for the new testimonial
-      }, 500); // Half of the animation duration for the transition
-    }, 4000); // 4 seconds per testimonial, adjust as needed
-
+        setAnimationClass('slide-in'); 
+      }, 500); 
+    }, 4000); 
     return () => clearInterval(interval);
   }, [testimonials.length]);
 
-  // Handle submission for the form within ServiceLayout
   const handleServiceFormSubmit = async (event) => {
-    event.preventDefault(); // Prevent default form submission
+    event.preventDefault(); 
 
-    // IMPORTANT: In a real application, you would perform CAPTCHA verification here
-    // before proceeding with form submission.
-    // Example: Check if the reCAPTCHA checkbox is checked (for a basic visual CAPTCHA)
     const recaptchaCheckbox = event.target.elements.recaptchaCheckbox;
     if (recaptchaCheckbox && !recaptchaCheckbox.checked) {
       alert("Please complete the CAPTCHA verification.");
-      return; // Stop the submission if CAPTCHA is not checked
+      return; 
     }
 
 
     console.log("ServiceLayout form submitted!");
-    // Simulate API call or form processing
-    await new Promise(resolve => setTimeout(resolve, 1000)); // Simulate 1-second delay
+    await new Promise(resolve => setTimeout(resolve, 1000)); 
 
-    setShowServiceFormSuccess(true); // Show the success message
+    setShowServiceFormSuccess(true);
 
-    // Optionally, reset the form after successful submission
     event.target.reset();
   };
 
@@ -143,7 +135,6 @@ export default function ServiceLayout({
             <div className="mt-8">
               <Link
                 href="/get-started"
-                // MODIFIED: Smaller padding, lighter blue, no star
                 className="inline-flex items-center gap-2 px-5 py-2 text-md font-semibold text-white bg-blue-500 rounded-md shadow-lg hover:bg-blue-600 transition-colors duration-300"
               >
                 {healingCtaButtonText} {/* Dynamic text */}
@@ -191,7 +182,6 @@ export default function ServiceLayout({
             <div className="mt-8">
               <Link
                 href="/get-started"
-                // MODIFIED: Smaller padding, lighter blue, no star
                 className="inline-flex items-center gap-2 px-5 py-2 text-md font-semibold text-white bg-blue-500 rounded-md shadow-lg hover:bg-blue-600 transition-colors duration-300"
               >
                 {faithPathCtaButtonText} {/* Dynamic text */}
