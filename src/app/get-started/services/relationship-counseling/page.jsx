@@ -20,10 +20,9 @@ export default function RelationshipCounselingPage() {
       { title: "Gottman Method Strategies", description: "Implement practical tools for conflict management, friendship building, and shared meaning." },
       { title: "Forgiveness & Reconciliation", description: "Navigate the complex process of forgiveness, releasing past hurts and embracing new beginnings." },
     ],
-    mainServiceImage: "/images/service-relationships.jpg", // Placeholder
-    faithPathImage: "/images/service-relationship-faith.jpg", // Placeholder
-    heroImage: "/images/service-img-2.jpg", // 👈 NEW
-    // CUSTOM BUTTON TEXTS FOR THIS PAGE
+    mainServiceImage: "/images/service-relationships.jpg", 
+    faithPathImage: "/images/service-relationship-faith.jpg", 
+    heroImage: "/images/service-img-2.jpg", 
     healingCtaButtonText: "Restore Your Marriage",
     faithPathCtaButtonText: "Discover Your Marriage Strength",
   };
