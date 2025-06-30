@@ -5,42 +5,32 @@ import Link from 'next/link';
 import { useState } from 'react';
 
 export default function GetStartedPage() {
-  // NEW STATE: For the success message dialog
   const [showSuccessMessage, setShowSuccessMessage] = useState(false);
 
-  // Function to allow only numbers, plus common control keys (backspace, arrows, etc.)
   const handleKeyDown = (event) => {
-    // Allow: backspace, delete, tab, escape, enter, period
     if ([8, 9, 27, 13, 46].includes(event.keyCode) ||
-        // Allow: Ctrl/cmd+A, Ctrl/cmd+C, Ctrl/cmd+V, Ctrl/cmd+X
         ((event.keyCode === 65 || event.keyCode === 67 || event.keyCode === 86 || event.keyCode === 88) && (event.ctrlKey === true || event.metaKey === true)) ||
-        // Allow: home, end, left, right arrow keys
         (event.keyCode >= 35 && event.keyCode <= 40)) {
       return;
     }
-    // Ensure that it is a number and stop the keypress if not
     if ((event.shiftKey || (event.keyCode < 48 || event.keyCode > 57)) && (event.keyCode < 96 || event.keyCode > 105)) {
       event.preventDefault();
     }
   };
 
-  // NEW FUNCTION: Handle submission for this form
   const handleSubmit = async (event) => {
-    event.preventDefault(); // Prevent default form submission
+    event.preventDefault(); 
 
     console.log("Get Started Page Form submitted!");
-    // Simulate API call or form processing
-    await new Promise(resolve => setTimeout(resolve, 1000)); // Simulate 1-second delay
+    await new Promise(resolve => setTimeout(resolve, 1000)); 
 
-    setShowSuccessMessage(true); // Show the success message
+    setShowSuccessMessage(true);
 
-    // Optionally, reset the form after successful submission
     event.target.reset();
   };
 
 
   return (
-    // Outer container for the whole page, controlling the background color
     <div className="bg-blue-100 min-h-screen">
       {/* Container for the side-by-side content */}
       <div className="max-w-6xl mx-auto flex flex-col lg:flex-row gap-12 items-start py-16 px-4 sm:px-6 lg:px-8">
