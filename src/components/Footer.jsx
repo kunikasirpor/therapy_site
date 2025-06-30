@@ -1,6 +1,6 @@
 // dr-blake-psychology/components/Footer.jsx
 import Link from 'next/link';
-import Image from 'next/image'; // For logo and psychology today badge
+import Image from 'next/image'; 
 
 export default function Footer() {
   return (
@@ -27,13 +27,12 @@ export default function Footer() {
               <li><Link href="#testimonials" className="hover:text-white transition-colors">Testimonials</Link></li>
               <li><Link href="#about" className="hover:text-white transition-colors">About Me</Link></li>
               <li><Link href="#faq" className="hover:text-white transition-colors">FAQ&apos;s</Link></li>
-              <li><Link href="#services" className="hover:text-white transition-colors">Services</Link></li> {/* Using Services for Therapies/Blogs initially */}
-              {/* You might add specific pages for Therapies or Blog later */}
+              <li><Link href="#services" className="hover:text-white transition-colors">Services</Link></li> 
               <li><Link href="#" className="hover:text-white transition-colors">Blog</Link></li>
             </ul>
           </div>
 
-          {/* Column 3: Areas Served (Example cities for Dr. Blake's LA location) */}
+          {/* Column 3: Areas Served  */}
           <div>
             <h3 className="text-lg font-semibold text-white mb-4">AREAS SERVED</h3>
             <ul className="space-y-2 text-sm">
@@ -43,7 +42,6 @@ export default function Footer() {
               <li>Beverly Hills, CA</li>
               <li>Glendale, CA</li>
               <li>Long Beach, CA</li>
-              {/* Add more relevant cities/areas for LA */}
             </ul>
           </div>
 
