@@ -3,6 +3,6 @@
     "paths": {
       "@/*": ["./src/*"]
     },
-    "types": []  // disables automatic type libraries
+    "types": []  
   }
 }
