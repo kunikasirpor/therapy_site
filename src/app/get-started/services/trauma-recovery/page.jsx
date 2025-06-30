@@ -20,10 +20,9 @@ export default function TraumaRecoveryPage() {
       { title: "Cognitive Processing Therapy (CPT) Principles", description: "Challenge unhelpful thoughts and beliefs that keep you stuck in the cycle of trauma." },
       { title: "Biblical Narrative & Prayer", description: "Explore the healing power of scripture and prayer to find spiritual solace and strength amidst your pain." },
     ],
-    mainServiceImage: "/images/service-trauma.jpg", // Placeholder
-    faithPathImage: "/images/service-trauma-faith.jpg", // Placeholder
-    heroImage: "/images/service-img-3.jpg", // 👈 NEW
-    // CUSTOM BUTTON TEXTS FOR THIS PAGE
+    mainServiceImage: "/images/service-trauma.jpg", 
+    faithPathImage: "/images/service-trauma-faith.jpg", 
+    heroImage: "/images/service-img-3.jpg", 
     healingCtaButtonText: "Let's Heal",
     faithPathCtaButtonText: "Discover How You Can Heal",
   };
