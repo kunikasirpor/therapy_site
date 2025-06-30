@@ -79,7 +79,7 @@ export default function GetStartedPage() {
             usually within one business day. This form is safe, private, and completely free.
           </p>
 
-          <form className="space-y-4" onSubmit={handleSubmit}> {/* ADDED onSubmit handler */}
+          <form className="space-y-4" onSubmit={handleSubmit}> {/* onSubmit handler */}
             <input type="text" name="name" placeholder="Name" required className="w-full px-4 py-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500" />
             <input type="email" name="email" placeholder="you@example.com" required className="w-full px-4 py-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500" />
             <input type="tel" name="phone" placeholder="(555) 234-5678" required className="w-full px-4 py-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500" onKeyDown={handleKeyDown} />
@@ -134,7 +134,7 @@ export default function GetStartedPage() {
         </div>
       </div>
 
-      {/* NEW: Success Message Dialog Box for GetStartedPage form */}
+      {/* Success Message Dialog Box for GetStartedPage form */}
       {showSuccessMessage && (
         <div className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-50 backdrop-blur-sm">
           <div className="bg-white rounded-lg shadow-xl p-8 max-w-md mx-auto text-center border-t-4 border-blue-500 transform transition-all duration-300 scale-100 opacity-100">
