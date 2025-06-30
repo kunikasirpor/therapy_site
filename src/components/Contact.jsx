@@ -6,17 +6,12 @@ import Link from 'next/link';
 export default function Contact() {
   const [showSuccessMessage, setShowSuccessMessage] = useState(false);
 
-  // Function to allow only numbers, plus common control keys (backspace, arrows, etc.)
   const handleKeyDown = (event) => {
-    // Allow: backspace, delete, tab, escape, enter, period
     if ([8, 9, 27, 13, 46].includes(event.keyCode) ||
-        // Allow: Ctrl/cmd+A, Ctrl/cmd+C, Ctrl/cmd+V, Ctrl/cmd+X
         ((event.keyCode === 65 || event.keyCode === 67 || event.keyCode === 86 || event.keyCode === 88) && (event.ctrlKey === true || event.metaKey === true)) ||
-        // Allow: home, end, left, right arrow keys
         (event.keyCode >= 35 && event.keyCode <= 40)) {
       return;
     }
-    // Ensure that it is a number and stop the keypress if not
     if ((event.shiftKey || (event.keyCode < 48 || event.keyCode > 57)) && (event.keyCode < 96 || event.keyCode > 105)) {
       event.preventDefault();
     }
@@ -26,30 +21,6 @@ export default function Contact() {
     event.preventDefault();
 
     console.log("Form submitted!");
-    // In a real application, you would send form data to your backend here
-    // Example:
-    // const formData = new FormData(event.target);
-    // const data = Object.fromEntries(formData.entries());
-    // try {
-    //     const response = await fetch('/api/submit-contact-form', { // Your backend API endpoint
-    //         method: 'POST',
-    //         headers: { 'Content-Type': 'application/json' },
-    //         body: JSON.stringify(data),
-    //     });
-    //     const result = await response.json();
-    //
-    //     if (response.ok) { // Assuming success if response is OK
-    //         setShowSuccessMessage(true);
-    //         event.target.reset();
-    //     } else {
-    //         alert(`Form submission failed: ${result.message || 'Server error.'}`);
-    //     }
-    // } catch (error) {
-    //     console.error("Form submission error:", error);
-    //     alert("An error occurred during form submission. Please try again.");
-    // }
-
-    // Simulating success if no actual backend is connected
     await new Promise(resolve => setTimeout(resolve, 1000));
     setShowSuccessMessage(true);
     event.target.reset();
