@@ -9,17 +9,14 @@ export default function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [mobileServicesOpen, setMobileServicesOpen] = useState(false); // State for mobile services dropdown
 
-  // Check if we are on the homepage
   const isHome = pathname === '/';
 
-  // Define main navigation links (excluding Services, as it will have a dropdown)
   const mainNavLinks = [
     { name: 'About', anchor: 'about' },
     { name: 'Rates & FAQs', anchor: 'faq' },
     { name: 'Contact', anchor: 'contact' },
   ];
 
-  // Define service dropdown links
   const serviceDropdownLinks = [
     { name: 'Anxiety & Stress Management', href: '/get-started/services/anxiety-stress-management' },
     { name: 'Relationship Counseling', href: '/get-started/services/relationship-counseling' },
@@ -49,13 +46,13 @@ export default function Header() {
           <div className="hidden md:flex space-x-8 items-center">
             {/* Services Dropdown for Desktop */}
             <div className="relative group">
-              {/* MODIFIED: "Services" is now a Link to /services */}
+              {/* "Services" is now a Link to /services */}
               <Link
-                href="/#services" // Link to the main services page
+                href="/#services" 
                 className="text-gray-700 hover:text-blue-600 font-medium text-lg transition-colors flex items-center"
               >
                 Services
-                {/* Optional: Dropdown arrow icon remains */}
+                {/* Dropdown arrow icon remains */}
                 <svg className="inline-block ml-1 w-4 h-4 transform group-hover:rotate-180 transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7"></path>
                 </svg>
@@ -111,7 +108,7 @@ export default function Header() {
           <div className="md:hidden mt-4 space-y-3 px-4">
             {/* Mobile Services Link and Toggle */}
             <div className="flex items-center justify-between">
-              {/* MODIFIED: "Services" is now a Link to /services */}
+              {/* "Services" is now a Link to /services */}
               <Link
                 href="/#services"
                 className="text-gray-700 hover:text-blue-600 font-medium text-base py-2"
